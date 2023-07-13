@@ -6,6 +6,16 @@ import seaborn as sns
 from sklearn.cluster import KMeans
 import streamlit as st
 
+
+#favicon
+st.set_page_config(page_title="Mall Customer Clustering", page_icon="🧊")
+
+#style.css
+
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+
 # import dataset
 
 df = pd.read_csv('dataset/Mall_Customers.csv')
@@ -72,3 +82,7 @@ def run_kmeans(n_clust):
 run_kmeans(clust)
 
 st.write('---')
+#footer
+st.markdown('''
+     - All rights reserved - @masendhy - 2023 -
+    ''', unsafe_allow_html=True)
